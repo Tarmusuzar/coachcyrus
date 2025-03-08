@@ -2,7 +2,7 @@
   <div class="landing-page" >
     <section class="hero">
       <div class="hero-overlay">
-        <h1>COACH CYRUS FITNESS </h1>
+        <h1>Transform Your Body Today!</h1>
         <p>Customized training programs to achieve real results.</p>
         <button @click="scrollToSignup">Get Started</button>
       </div>
@@ -20,11 +20,22 @@
         <video src="../assets/1.mp4" autoplay loop muted playsinline></video>
     </div>
     <div class="video-card">
-        <video src="../assets/2.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/6.mp4" autoplay loop muted playsinline></video>
     </div>
+    
+       
+        <img src="../assets/p2.jpg" style="object-fit: cover; border-radius: 10px ; " alt="Description of image" class="video-card" />
+
+   
     <div class="video-card">
-        <video src="../assets/3.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/4.mp4" autoplay loop muted playsinline></video>
     </div>
+    <img src="../assets/p1.jpg" style="object-fit: cover; border-radius: 10px ; " alt="Description of image" class="video-card" />
+    <div class="video-card">
+        <video src="../assets/5.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <img src="../assets/p3.jpg" style="object-fit: cover; border-radius: 10px ; " alt="Description of image" class="video-card" />
+
 </div>
 
     </section>
@@ -32,62 +43,112 @@
     <div class="services-section">
     <div class="services-container">
         <div class="service-card">
-            <div class="card-header">🏋️‍♂️ Strength Training</div>
+            <div class="card-header"> Strength Training</div>
             <div class="card-body">Build muscle and increase overall strength with personalized workout plans. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, tenetur id. Sed similique rerum, voluptatum minima vero architecto magni repellat exercitationem voluptate repellendus quisquam ea dolore et beatae reprehenderit recusandae.
 
             </div>
         </div>
         <div class="service-card">
-            <div class="card-header">🔥 Fat Loss Programs</div>
+            <div class="card-header"> Fat Loss Programs</div>
             <div class="card-body">Effective workout routines lorem40 designed to burn fat and boost metabolism. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis minima deleniti nisi iste officiis explicabo sed commodi quo ea necessitatibus.</div>
         </div>
         <div class="service-card">
-            <div class="card-header">🏃‍♂️ Endurance Training</div>
+            <div class="card-header"> Endurance Training</div>
             <div class="card-body">Improve stamina and cardiovascular health with specialized training sessions.</div>
         </div>
         <div class="service-card">
-            <div class="card-header">🍏 Nutrition Guidance</div>
+            <div class="card-header"> Nutrition Guidance</div>
             <div class="card-body">Personalized diet plans to complement your fitness goals and lifestyle. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos perspiciatis numquam modi cupiditate provident pariatur ad est obcaecati similique, omnis architecto sequi optio atque fugiat. Sit nulla non incidunt eveniet? Fuga consequatur, reiciendis incidunt quibusdam ipsum iste velit nisi quod.</div>
         </div>
     </div>
 </div>
 
+<section class="signup" ref="signup">
+    <h2>Join Now</h2>
+    <form @submit.prevent="submitForm">
+      <input type="text" v-model="form.name" placeholder="Full Name" required />
+      <input type="email" v-model="form.email" placeholder="Email Address" required />
+      <textarea v-model="form.message" placeholder="Tell us about your fitness goals" required></textarea>
 
-    <section class="signup" ref="signup">
-      <h2>Join Now</h2>
-      <form @submit.prevent="submitForm">
-        <input type="text" v-model="form.name" placeholder="Full Name" required />
-        <input type="email" v-model="form.email" placeholder="Email Address" required />
-        <textarea v-model="form.message" placeholder="Tell us about your fitness goals" required></textarea>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
+      <!-- Choose between Online or Physical using toggle buttons -->
+      <div>
+       
+        <div class="session-type-buttons">
+          <button
+            type="button"
+            class="session-button online-button"
+            :class="{ active: form.sessionType === 'online' }"
+            @click="form.sessionType = 'online'"
+          >
+            Online
+          </button>
+          <button
+            type="button"
+            class="session-button physical-button"
+            :class="{ active: form.sessionType === 'physical' }"
+            @click="form.sessionType = 'physical'"
+          >
+            Physical
+          </button>
+        </div>
+      </div>
+
+      <!-- Set session length -->
+      <div>
+        
+        <div class="session-length-controls">
+          <button type="button" @click="decreaseLength" >-</button>
+          <span>{{ sessionLength }} hour(s)</span>
+          <button type="button" @click="increaseLength">+</button>
+        </div>
+      </div>
+      <!-- Hidden bill section, shows up when session length is set -->
+      <div v-if="sessionLength > 0">
+        <p>Bill: £{{ calculateBill }} ({{ sessionLength }} hour(s) at £30 per hour)</p>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
     
     <footer class="contact-info">
   <div class="contact-container">
     <div class="contact-item">
-      <span>📍</span> <p>London, UK</p>
+      <span><i class="fas fa-map-marker-alt"></i>
+      </span> <span class="info">🇬🇧 
+        Swansea, UK</span>
     </div>
     <div class="contact-item">
-      <span>📞</span> <p>+44 785 268 4508</p>
+      <span><i class="fas fa-phone"></i>
+      </span> <span class="info">+44 785 268 4508</span>
     </div>
+    
     <div class="contact-item">
-      <span>📧</span> <p>coachcyrus@gmail.com</p>
+      <span><i class="fab fa-tiktok"></i>
+      </span> <span class="info"><a href="https://www.tiktok.com/@coachcyrusmosh?_t=ZS-8uViCT30N8s&_r=1">tiktok.com/coachcyrus</a></span>
     </div>
+    
     <div class="contact-item">
-  <span>📸</span> <p>instagram.com/coachcyrus</p>
+      <span><i class="fab fa-facebook"></i>
+      </span> <span class="info"><a href="https://www.facebook.com/cyrus.akabwayi.5">facebook.com/coachcyrus </a></span>
+    </div>
+   
+    <div class="contact-item">
+  <span><i class="fab fa-instagram"></i>
+  </span> <span class="info" ><a href="https://www.instagram.com/coachcyruscoachcyrus?igsh=Z2kwM2I1eGxvM2pn">instagram.com/coachcyrus</a></span>
 </div>
-
-
-
+<div class="contact-item">
+      <span><i class="fas fa-envelope"></i>
+      </span> <span class="info">mugwanyabraham2021@gmail.com</span>
+    </div>
   </div>
   <div class="footer-divider"></div>
   <h2 style="text-align: center; padding-top: 1rem; padding-bottom: -0.3rem;">About Me</h2>
   <div class="about" style=" margin: auto; width: 100%;">
-    <p style="text-align: center; ">With over 9 years of experience as a certified personal trainer, I have transformed countless clients through expert fitness coaching, tailored training programs, and in-depth nutritional guidance. My career spans across Dubai and London, including key areas such as Mayfair, Kensington, and Canary Wharf, where I have worked with high-profile individuals, athletes, and fitness enthusiasts. I specialize in strength training, weight management, and functional fitness, ensuring each client achieves sustainable results. My expertise, combined with a passion for health and performance, makes me a sought-after trainer in the industry.</p>
+    <p >With over 9 years of experience as a certified personal trainer, I have transformed countless clients through expert fitness coaching, tailored training programs, and in-depth nutritional guidance. My career spans across Dubai and London, including key areas such as Mayfair, Kensington, and Canary Wharf, where I have worked with high-profile individuals, athletes, and fitness enthusiasts. I specialize in strength training, weight management, and functional fitness, ensuring each client achieves sustainable results. My expertise, combined with a passion for health and performance, makes me a sought-after trainer in the industry.</p>
   </div>
   <div class="footer-links" style="margin: auto;">
-    <p style="text-align: center;">© 2024 Coach Cyrus. All rights reserved.</p>
+    <p style="text-align: center; color: #E5B700;;">© 2025 Coach Cyrus. All rights reserved.</p>
   </div>
 </footer>
 
@@ -98,12 +159,21 @@
 export default {
   data() {
     return {
+      sessionLength:0,
       form: {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        sessionType: 'physical',
+        
       }
     };
+  },
+  computed: {
+    // Calculate the total bill based on the session length
+    calculateBill() {
+      return this.sessionLength * 30; // Each hour costs £30
+    },
   },
   methods: {
     submitForm() {
@@ -113,8 +183,20 @@ export default {
     },
     scrollToSignup() {
       this.$refs.signup.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+    },
+    increaseLength() {
+      this.sessionLength++; // Increase session length by 1 hour
+     
+    },
+    decreaseLength() {
+     // if (this.sessionLength > 1) {
+        this.sessionLength -= 1; // Decrease session length by 1 hour, minimum 1
+      //}
+    },
+  },
+  
+ 
+    
 };
 </script>
 
@@ -240,14 +322,17 @@ button:hover {
 .contact-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .contact-item {
   display: flex;
   align-items: center;
+
   gap: 10px;
   font-size: 1.2em;
 }
+
 .about {
   margin-top: 20px;
   padding: 10px;
@@ -304,12 +389,20 @@ button:hover {
     opacity: 0.7;
   }
 
+  .contact-item .info{
+    font-size: 1.2em;
+    opacity: 0.7;
+    margin-left: .3rem;
+
+  }
+
+  
   .about {
     margin-top: 20px;
     font-size: 0.8em;
     color: rgba(255, 255, 255, 0.6);
-    max-width: 80%;
-    
+    max-width: 100%;
+    padding:0 -10px;
     line-height: 1.5;
   }
 
@@ -426,5 +519,78 @@ button:hover {
         margin-left: -20px;
     }
 }
+a{
+  color: inherit;
+ 
+}
+i{
+  color:#E5B700; ;
+}
+.session-type-buttons {
+  display: flex;
+  gap: 10px;
+  
+}
 
+.session-button {
+  padding: 10px 20px;
+  border: 2px solid white; /* Black border */
+  background-color: #fff; /* White background */
+  color: #2a2a2a; /* Black text */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-size: 16px;
+}
+
+.session-button.active {
+  background-color: #E5B700; /* Orange background when active */
+  color: white; /* White text when active */
+  border-color: #E5B700; /* Orange border when active */
+}
+
+.session-button:hover {
+  background-color: #E5B700; /* Lighter orange on hover */
+  border-color: #E5B700; /* Lighter orange border on hover */
+}
+
+.online-button {
+  background-color: #fff;
+}
+
+.physical-button {
+  background-color: #fff;
+}
+
+.session-length-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-length-controls button {
+  padding: 5px 15px;
+  font-size: 20px;
+  background-color: #fff; /* White background */
+  border: 2px solid white; /* Black border */
+  color: #424141; /* Black text */
+  cursor: pointer;
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s;
+}
+
+.session-length-controls button:disabled {
+  background-color: #f4f4f4; /* Light gray for disabled button */
+  color: #ccc; /* Gray text when disabled */
+  cursor: not-allowed;
+}
+
+.session-length-controls button:hover {
+  background-color: #ff5733; /* Orange background on hover */
+  border-color: #ff5733; /* Orange border on hover */
+  color: white; /* White text when hovered */
+}
+
+.session-length-controls span {
+  font-size: 18px;
+  color: white; /* Black text */
+}
 </style>
