@@ -14,7 +14,7 @@
     </header>
     
     <section class="showcase">
-      <h2>Success Stories</h2>
+      <h2>Sample Videos</h2>
       <div class="gallery">
     <div class="video-card">
         <video src="../assets/1.mp4" autoplay loop muted playsinline></video>
