@@ -44,21 +44,20 @@
     <div class="services-container">
         <div class="service-card">
             <div class="card-header"> Strength Training</div>
-            <div class="card-body">Build muscle and increase overall strength with personalized workout plans. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, tenetur id. Sed similique rerum, voluptatum minima vero architecto magni repellat exercitationem voluptate repellendus quisquam ea dolore et beatae reprehenderit recusandae.
-
+            <div class="card-body">Build muscle, increase endurance, and enhance overall strength with targeted resistance training. My strength programs are designed to improve muscle definition, boost metabolism, and help you achieve a powerful, toned physique. Whether you're a beginner or an experienced lifter, I'll guide you through effective techniques to maximize results safely and efficiently.
             </div>
         </div>
         <div class="service-card">
             <div class="card-header"> Fat Loss Programs</div>
-            <div class="card-body">Effective workout routines lorem40 designed to burn fat and boost metabolism. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis minima deleniti nisi iste officiis explicabo sed commodi quo ea necessitatibus.</div>
+            <div class="card-body">Burn fat, boost metabolism, and achieve a leaner physique with my specialized fat loss programs. Through a combination of high-intensity workouts, strength training, and tailored nutrition guidance, I’ll help you shed excess weight effectively. My approach ensures sustainable results, keeping you motivated and energized while reaching your fitness goals.</div>
         </div>
         <div class="service-card">
             <div class="card-header"> Endurance Training</div>
-            <div class="card-body">Improve stamina and cardiovascular health with specialized training sessions.</div>
+            <div class="card-body">Enhance your stamina, improve cardiovascular health, and build lasting energy with my endurance training programs. Through a mix of aerobic exercises, interval training, and strength conditioning, I’ll help you increase your physical resilience and sustain peak performance for longer durations. Whether you're training for a sport or just looking to boost your overall fitness, my tailored approach will push your limits and keep you progressing.</div>
         </div>
         <div class="service-card">
             <div class="card-header"> Nutrition Guidance</div>
-            <div class="card-body">Personalized diet plans to complement your fitness goals and lifestyle. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos perspiciatis numquam modi cupiditate provident pariatur ad est obcaecati similique, omnis architecto sequi optio atque fugiat. Sit nulla non incidunt eveniet? Fuga consequatur, reiciendis incidunt quibusdam ipsum iste velit nisi quod.</div>
+            <div class="card-body">Fuel your body the right way with personalized nutrition guidance tailored to your fitness goals. Whether you're aiming for fat loss, muscle gain, or improved endurance, I’ll help you make smart food choices that support your progress. My approach focuses on balanced meals, portion control, and sustainable habits to ensure long-term success without restrictive dieting.</div>
         </div>
     </div>
 </div>
@@ -77,16 +76,16 @@
           <button
             type="button"
             class="session-button online-button"
-            :class="{ active: form.sessionType === 'online' }"
-            @click="form.sessionType = 'online'"
+            :class="{ active: sessionType === 'online' }"
+            @click="sessionType = 'online'"
           >
             Online
           </button>
           <button
             type="button"
             class="session-button physical-button"
-            :class="{ active: form.sessionType === 'physical' }"
-            @click="form.sessionType = 'physical'"
+            :class="{ active: sessionType === 'physical' }"
+            @click="sessionType = 'physical'"
           >
             Physical
           </button>
@@ -148,7 +147,7 @@
     <p >With over 9 years of experience as a certified personal trainer, I have transformed countless clients through expert fitness coaching, tailored training programs, and in-depth nutritional guidance. My career spans across Dubai and London, including key areas such as Mayfair, Kensington, and Canary Wharf, where I have worked with high-profile individuals, athletes, and fitness enthusiasts. I specialize in strength training, weight management, and functional fitness, ensuring each client achieves sustainable results. My expertise, combined with a passion for health and performance, makes me a sought-after trainer in the industry.</p>
   </div>
   <div class="footer-links" style="margin: auto;">
-    <p style="text-align: center; color: #E5B700;;">© 2025 Coach Cyrus. All rights reserved.</p>
+    <p style="text-align: center; color: #E5B700;;">© 2025 Cyrus Fitness. All rights reserved.</p>
   </div>
 </footer>
 
@@ -160,11 +159,12 @@ export default {
   data() {
     return {
       sessionLength:0,
+      sessionType: 'physical',
       form: {
         name: '',
         email: '',
         message: '',
-        sessionType: 'physical',
+        
         
       }
     };
@@ -172,7 +172,11 @@ export default {
   computed: {
     // Calculate the total bill based on the session length
     calculateBill() {
-      return this.sessionLength * 30; // Each hour costs £30
+      if(this.sessionType === 'physical'){
+        return this.sessionLength * 30
+      }else{
+        return this.sessionLength * 20
+      } // Each hour costs £30
     },
   },
   methods: {
