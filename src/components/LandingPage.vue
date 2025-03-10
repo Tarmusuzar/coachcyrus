@@ -144,8 +144,7 @@
   <div class="footer-divider"></div>
   <h2 style="text-align: center; padding-top: 1rem; padding-bottom: -0.3rem;">About Me</h2>
   <div class="about" style=" margin: auto; width: 100%;">
-    <p >With over 9 years of experience as a certified personal trainer, I have transformed countless clients through expert fitness coaching, tailored training programs, and in-depth nutritional guidance. My career spans across Dubai and London, including key areas such as Mayfair, Kensington, and Canary Wharf, where I have worked with high-profile individuals, athletes, and fitness enthusiasts. I specialize in strength training, weight management, and functional fitness, ensuring each client achieves sustainable results. My expertise, combined with a passion for health and performance, makes me a sought-after trainer in the industry.</p>
-  </div>
+    <p > I am an experienced gym trainer with over 5 years of experience in the gym</p> </div>
   <div class="footer-links" style="margin: auto;">
     <p style="text-align: center; color: #E5B700;;">© 2025 Cyrus Fitness. All rights reserved.</p>
   </div>
