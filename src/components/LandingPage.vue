@@ -144,7 +144,7 @@
   <div class="footer-divider"></div>
   <h2 style="text-align: center; padding-top: 1rem; padding-bottom: -0.3rem;">About Me</h2>
   <div class="about" style=" margin: auto; width: 100%;">
-    <p > I am an experienced gym trainer with over 5 years of experience in the gym</p> </div>
+    <p > I am an experienced trainer/ personal trainer with level 3 certificate and  with over 6 years of experience in the gym and training. The people I have trained have seen tremendous results and are always grateful. Join Cyrus Fitness Today</p> </div>
   <div class="footer-links" style="margin: auto;">
     <p style="text-align: center; color: #E5B700;;">© 2025 Cyrus Fitness. All rights reserved.</p>
   </div>
