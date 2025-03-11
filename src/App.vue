@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import LandingPage from './components/LandingPage.vue'
+import LandingPage from './components/LandingPages.vue'
 
 export default {
   name: 'App',
